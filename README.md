@@ -311,3 +311,85 @@ Use keyword *not* paired with *in* to check it an irem is not in a list
            
           >> [5, 6, 7, 6, 7, 8, 9]
       
+# Modules 
+
+* another name for a pyton file with code in it 
+* you can import a module using keyword *import* to use variables and functions from it 
+
+## Built-In Modules: 
+* math 
+* random 
+* statistics 
+* keyword
+
+        
+        import math 
+        math.pow(2, 3)
+        
+        >> 8.0
+        
+##  Create your own module by: 
+* create a python file
+* save the file 
+* import the file into another file located in the same folder 
+
+## Files 
+* Python has built-in functions made to manipulate file objects 
+* first step ins to open a file using the *open()* function 
+* the *write(x)* function lets you write x to a file 
+* the *read()* function lets you read from a file
+* you must close a file with the *close()* function 
+
+## Open File
+* the *open* function takes a file and a file mode and returns a file object 
+* Here are some modes that you can open a file in: 
+    * 'r' - opens a file for reading only
+    * 'w' - opens a file for writing only; overwrites the file if it already exists; if it doesn't it creates a new file 
+    * 'w+' - opens a file = for reading and writing; overwrites the file if it already exists; if it doesn't exist, creates a new file 
+    
+            st = open("st.text", "w")
+            st.write("Hi from Python!")
+            st.close()
+            
+## Automatically close file 
+* to automatically close a file without using the *close()* function, open your file using a **with-statement**
+
+        with.open("st.text", "w") as f: 
+            f.write("Hi from Python!")
+* this will automatically close the file once the code inside the with-statement executes
+
+## CSV File 
+* python has built-in module for working with CSV files 
+* you can use the *open()* function to open a file and then use the *writer()* function from the csv module to turn the file object into a csv object 
+* use the function *writerow()* to write to the csv object 
+
+        import csv
+        
+        with open("st.csv", "w", newline = '') as f: 
+        w = csv.writer(f, delimiter = ",")
+        w.writerow(["one", "two", "three"])
+        w.writerow(["four", "five, "six"])
+        
+        >> one, two, three
+        >> four, five, six
+        
+ * the csv module also has a fucntion for reading a CSV file: *reader()* 
+ * the *reader()* function returns an iterable of the rowss in the csv file 
+ 
+        import csv
+        
+        with open("st.csv", "r") as f: 
+        r = csv.reader(f, delimiter = ",")
+        for row in r: 
+            print(",".join(row))
+            
+         >> one, two, three
+         >> four, five, six
+    
+
+
+
+
+
+
+ 
