@@ -218,3 +218,96 @@ Use keyword *not* paired with *in* to check it an irem is not in a list
 *use the syntax string[x:y] to slice a string from index x up to index y
 
 -slicing can be used on lists as well 
+
+# Loops 
+## For-Loops 
+* for loops are used to iterate through an iterable(string, list , etc.)
+
+    
+        name = "Ted"
+        for character in name:
+            print(character)
+            
+ >> T
+ >> e
+ >> d
+ 
+ * you can also have an index variable in a for loop by using enumerate(x):
+    
+        tv = ["GOT", "Narcos", "Vice"]
+        for i, show in enumerate(tv): 
+            new = tv[i] 
+            new = new.upper()
+            tv[i] = new
+            
+        print(tv) 
+     >> ['GOT', 'Narcos', 'Vice']
+     
+   * or  by using range(x, y):
+   
+        
+            for i in range(1, 11):
+            print(i)
+      >> 1 
+      
+     ... 
+      >> 9
+      >> 10
+      
+  ## While-Loops 
+  * while-loops are used to run a block of code as long as a condition is true 
+        
+        
+            x = 3 
+            while x > 0: 
+                print(x)
+                x -+ 1 
+            print("Happy New Year!")
+            
+        >> 3
+        >> 2
+        >> 1
+        >> 'Happy New Year!' 
+        
+        * Note: writing 'while True' will make an infinite loop unless you use a break statement 
+        
+   ## Break 
+   
+   * a break statement is used to terminate a loop 
+   
+           while True: 
+                a = input("Guess a number: ")
+                if a == '25' 
+                    break
+                else 
+                    print("That is not the right number!" 
+                
+  ## Continue 
+  * a continue statement stops the cuttent iteration & moves onto the nxt one 
+  
+  
+        for i in range(1, 6): 
+            if i == 3; 
+                continue 
+            print(i)
+            
+        >> 1
+        >> 2
+        >> 4
+        >> 5
+        
+  ## Nested Loops
+   * you can combine loops by putting or 'nesting' one loop inside another 
+   
+   
+           list1 = [1, 2, 3]
+           list2 = [4, 5, 6' 
+           added = []
+           for i in list1 : 
+                for j in list2: 
+                    added.append(i + j)
+           
+           print(added)
+           
+          >> [5, 6, 7, 6, 7, 8, 9]
+      
